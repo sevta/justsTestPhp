@@ -4,19 +4,16 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                {{message.message[0]}}
-                {% for user in users %}
-                    <!-- <p>{{ user.username }}</p> -->
-                {% endfor %}
+                <h3 class='notification'>{{message.message[0]}}</h3>
                 <form action="/post" method="POST" class="form">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="username" name="username">
                     </div>
                     <div class="form-group">
-                        <input type="number" class="form-control" placeholder="age" name="age">
+                        <input type="password" class="form-control" placeholder="password" name="password">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="nick" name="nick">
+                        <input type="password" class="form-control" placeholder="check password" name="password2">
                     </div>
                     <div class="form-group">
                         <button class="btn btn-info" type="submit">send</button>
@@ -26,3 +23,18 @@
         </div>
     </div>   
 {% endblock content %}
+
+{% block script %}
+  <script>
+    $(document).ready( function () {
+      let notif = $('.notification')
+      if (notif.text == "") {
+        notif.hide();
+      } else {
+        setTimeout(() => {
+          notif.hide('slow');
+        } , 1000)
+      }
+    })
+  </script>
+{% endblock %}

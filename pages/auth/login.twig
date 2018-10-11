@@ -1,12 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>login</h1>
-</body>
-</html>
+{% extends '_partials/_layout.twig' %}
+
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-4">
+      <p class='notif'>{{ message.message[0] }}</p>
+        <h1>login</h1>
+        <form action="/login" method='POST'>
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder='username' name='username'>
+          </div>
+          <div class="form-group">
+            <input type="password" class='form-control' placeholder='password' name='password'>
+          </div>
+          <div class="form-group">
+            <button class='btn btn-primary'>Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block script %}
+  <script>
+    $(document).ready( function () {
+      setTimeout(() => {
+        $('.notif').hide('slow')
+      } , 1200)
+    }) 
+  </script>
+{% endblock %}
