@@ -1,0 +1,3 @@
+bintang = {
+    "usernmae" : "tesi"
+}

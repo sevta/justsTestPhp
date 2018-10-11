@@ -1,0 +1,15 @@
+{
+    "name": "aitindo-pc/slim",
+    "authors": [
+        {
+            "name": "septa",
+            "email": "septa.saputra@aitindo.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "^3.0",
+        "slim/twig-view": "^2.4",
+        "illuminate/database": "~5.1",
+        "slim/flash": "^0.4.0"
+    }
+}
